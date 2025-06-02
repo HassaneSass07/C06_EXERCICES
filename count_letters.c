@@ -18,6 +18,7 @@ int main() {
 
         // Vérifier si c'est une lettre alphabétique
         if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z')) {
+            
             // Convertir en minuscule sans utiliser tolower
             if (c >= 'A' && c <= 'Z') {
                 c = c + 32;
