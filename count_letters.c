@@ -35,6 +35,6 @@ int main() {
     }
 
     // Affiche le nombre de voyelles et de consonnes
-    printf("Voyelles : %d\nConsonnes : %d\n", voyelles, consonnes);
+    printf("Voyelles : %d\n Consonnes : %d\n", voyelles, consonnes);
     return 0;
 }
