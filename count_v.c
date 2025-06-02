@@ -1,38 +1,23 @@
-// Exo2: count_vc.c
 #include <stdio.h>
-
-int main() {
-    char str[100];
-    int i = 0, voyelles = 0, consonnes = 0;
-
-    // Lecture de toute la ligne (l'espace avant %[^\n] est crucial)
-    scanf(" %[^\n]", str);
-
-    // Traitement caractère par caractère
-    while (str[i] != '\0') {
-        char c = str[i];
-
-        // Convertir en minuscule manuellement si lettre majuscule
-        if (c >= 'A' && c <= 'Z') {
-            c = c + 32;
-        }
-
-        // Vérifie si c'est une lettre minuscule
+int main(){
+    int voyelle = 0;
+    int consonne = 0;
+    char c;
+    scanf("%c", &c);
+    while (c != '\n') {
         if (c >= 'a' && c <= 'z') {
-            // Vérifie si c'est une voyelle
-            if (c == 'a' || c == 'e' || c == 'i' ||
-                c == 'o' || c == 'u' || c == 'y') {
-                voyelles++;
-            } else {
-                consonnes++;
-            }
+            c = c - 32; // Convertit en majuscule
         }
+        if (c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U' || c == 'Y') {
+            voyelle++;
+        } else if ((c >= 'B' && c <= 'Z') && !(c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U' || c == 'Y')) {
+            consonne++;
+        }
+        scanf("%c", &c);
+    }    
 
-        i++;
-    }
-
-    // Affichage sur une seule ligne, sans saut de ligne supplémentaire
-    printf("Voyelles : %d, Consonnes : %d\n", voyelles, consonnes);
+    
+    printf("Voyelles : %d, Consonnes : %d",voyelle, consonne);
 
     return 0;
 }
