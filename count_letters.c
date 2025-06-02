@@ -7,6 +7,7 @@ int main() {
 
     // Demande à l'utilisateur d'entrer une chaîne de caractères
     printf("Entrez une chaîne : ");
+
     // Lecture sécurisée de la chaîne avec fgets (lecture jusqu'à '\n' ou EOF)
     fgets(str, sizeof(str), stdin);
 
@@ -14,14 +15,9 @@ int main() {
     while (str[i] != '\0') {
         char c = str[i];
 
-        // Ignore le saut de ligne final éventuel
-        if (c == '\n') {
-            i++;
-            continue;
-        }
-
         // Vérifie si le caractère est une lettre (majuscule ou minuscule)
         if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z')) {
+            
             // Convertit les majuscules en minuscules (manuellement)
             char lower = (c >= 'A' && c <= 'Z') ? c + 32 : c;
 
