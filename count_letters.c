@@ -1,24 +1,32 @@
+// Exo2: count_letters.c
 #include <stdio.h>
 
 int main() {
     char str[100];
     int i = 0, voyelles = 0, consonnes = 0;
 
-    // Saisie de la chaîne (utilisation de fgets pour lire toute la ligne)
+    // Demande à l'utilisateur d'entrer une chaîne de caractères
     printf("Entrez une chaîne : ");
+    // Lecture sécurisée de la chaîne avec fgets (lecture jusqu'à '\n' ou EOF)
     fgets(str, sizeof(str), stdin);
 
-    // Parcours caractère par caractère
-    while (str[i] != '\0' && str[i] != '\n') { // on ignore le '\n' de fin de ligne
+    // Parcours de la chaîne caractère par caractère
+    while (str[i] != '\0') {
         char c = str[i];
 
-        // Vérifie si le caractère est une lettre alphabétique
+        // Ignore le saut de ligne final éventuel
+        if (c == '\n') {
+            i++;
+            continue;
+        }
+
+        // Vérifie si le caractère est une lettre (majuscule ou minuscule)
         if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z')) {
-            // Convertit en minuscule si c'est une majuscule (sans tolower)
+            // Convertit les majuscules en minuscules (manuellement)
             char lower = (c >= 'A' && c <= 'Z') ? c + 32 : c;
 
             // Vérifie si c'est une voyelle
-            if (lower == 'a' || lower == 'e' || lower == 'i' || 
+            if (lower == 'a' || lower == 'e' || lower == 'i' ||
                 lower == 'o' || lower == 'u' || lower == 'y') {
                 voyelles++;
             } else {
@@ -28,7 +36,7 @@ int main() {
         i++;
     }
 
-    // Affiche le résultat
+    // Affichage des résultats
     printf("Voyelles : %d\nConsonnes : %d\n", voyelles, consonnes);
     return 0;
 }
