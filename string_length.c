@@ -4,14 +4,16 @@ int main() {
     char str[100];
     int len = 0;
 
+    // Lecture de la chaîne
     printf("Entrez une chaîne : ");
-    fgets(str, sizeof(str), stdin);
+    scanf("%[^\n]", str);
 
-    // Compte jusqu'à \n ou \0
-    while (str[len] != '\0' && str[len] != '\n') {
+    // Calcul manuel de la longueur
+    while (str[len] != '\0') {
         len++;
     }
 
+    // Affiche la longueur
     printf("Longueur de la chaîne : %d\n", len);
     return 0;
 }

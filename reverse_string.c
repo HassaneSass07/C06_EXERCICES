@@ -4,16 +4,17 @@ int main() {
     char str[100];
     int i = 0, len = 0;
 
+    // Demande à l'utilisateur une chaîne de caractères
     printf("Entrez une chaîne : ");
-    fgets(str, sizeof(str), stdin);
+    scanf("%[^\n]", str); // Lecture jusqu'au saut de ligne
 
-    // Calcul de la longueur sans le caractère de fin de ligne
-    while (str[len] != '\0' && str[len] != '\n') {
+    // Calcul de la longueur de la chaîne
+    while (str[len] != '\0') {
         len++;
     }
 
+    // Affichage de la chaîne inversée
     printf("Chaîne inversée : ");
-    // Affiche la chaîne en sens inverse
     for (i = len - 1; i >= 0; i--) {
         putchar(str[i]);
     }
