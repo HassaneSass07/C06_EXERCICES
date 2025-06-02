@@ -3,36 +3,49 @@
 
 int main() {
     char str[100];
-    int i = 0, voyelles = 0, consonnes = 0;
+    int i = 0;
+    int voyelles = 0;
+    int consonnes = 0;
 
-    // Demande à l'utilisateur d'entrer une chaîne de caractères
+    // Demander à l'utilisateur d'entrer une chaîne
     printf("Entrez une chaîne : ");
 
-    // Lecture sécurisée de la chaîne avec fgets (lecture jusqu'à '\n' ou EOF)
-    fgets(str, sizeof(str), stdin);
+    // Lire la chaîne avec fgets (permet de lire les espaces)
+    fgets(str, 100, stdin);
 
-    // Parcours de la chaîne caractère par caractère
+    // Parcourir chaque caractère de la chaîne
     while (str[i] != '\0') {
         char c = str[i];
 
-        // Vérifie si le caractère est une lettre (majuscule ou minuscule)
+        // Ignorer le caractère de saut de ligne '\n'
+        if (c == '\n') {
+            i++;
+            continue;
+        }
+
+        // Vérifie si le caractère est une lettre alphabétique
         if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z')) {
-            
-            // Convertit les majuscules en minuscules (manuellement)
-            char lower = (c >= 'A' && c <= 'Z') ? c + 32 : c;
+
+            // Convertir en minuscule sans utiliser tolower
+            if (c >= 'A' && c <= 'Z') {
+                c = c + 32;
+            }
 
             // Vérifie si c'est une voyelle
-            if (lower == 'a' || lower == 'e' || lower == 'i' ||
-                lower == 'o' || lower == 'u' || lower == 'y') {
+            if (c == 'a' || c == 'e' || c == 'i' ||
+                c == 'o' || c == 'u' || c == 'y') {
                 voyelles++;
             } else {
                 consonnes++;
             }
         }
+
         i++;
     }
 
-    // Affichage des résultats
-    printf("Voyelles : %d\nConsonnes : %d\n", voyelles, consonnes);
+    // Afficher le nombre de voyelles et consonnes
+    printf("Voyelles : %d\n", voyelles);
+    printf("Consonnes : %d\n", consonnes);
+
     return 0;
 }
