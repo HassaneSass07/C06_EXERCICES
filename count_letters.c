@@ -16,7 +16,7 @@ int main() {
 
             // Convertit en minuscule si nécessaire
             char lower = (c >= 'A' && c <= 'Z') ? c + 32 : c;
-            ss
+            
             // Vérifie si c'est une voyelle
             if (lower == 'a' || lower == 'e' || lower == 'i' || lower == 'o' || lower == 'u' || lower == 'y') {
                 voyelles++;
