@@ -1,22 +1,31 @@
 #include <stdio.h>
 
 int main() {
-    char str[100];
-    int i = 0, len = 0;
-
-    printf("Entrez une chaîne : ");
-    fgets(str, sizeof(str), stdin); // Lecture de la chaîne saisie par l'utilisateur
-
-    // Calcul de la longueur sans inclure le saut de ligne '\n'
-    while (str[len] != '\0' && str[len] != '\n') {
-        len++;
+    char input[1000];    // Tableau pour stocker la chaîne saisie
+    char reversed[1000]; // Tableau pour stocker la chaîne inversée
+    int length = 0;      // Variable pour calculer la longueur
+    int i;               // Variable de boucle
+    
+    // Demande de saisie à l'utilisateur
+    printf("Entrez une chaîne de caractères : ");
+    scanf("%s", input);
+    
+    // Calcul de la longueur de la chaîne (sans strlen)
+    while (input[length] != '\0') {
+        length++;
     }
-
-    // Affichage des caractères en ordre inverse
-    printf("Chaîne inversée : ");
-    for (i = len - 1; i >= 0; i--) {
-        putchar(str[i]);
+    
+    // Inversion de la chaîne
+    // On parcourt la chaîne de la fin vers le début
+    for (i = 0; i < length; i++) {
+        reversed[i] = input[length - 1 - i];
     }
-    printf("\n");
+    
+    // Ajout du caractère de fin de chaîne
+    reversed[length] = '\0';
+    
+    // Affichage du résultat
+    printf("Chaîne inversée : %s\n", reversed);
+    
     return 0;
 }
