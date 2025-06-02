@@ -1,34 +1,49 @@
-// Exo2: count_letters.c
 #include <stdio.h>
+// of vowels and consonant 
+void count_vowels_and_consonant(char* str) 
+{ 
+    // Declare the variable vowels and consonant 
+    int vowels = 0, consonants = 0; 
 
-int main() {
-    char str[100];
-    int i = 0;
-    int voyelles = 0;
-    int consonnes = 0;
+    int i; 
+    char ch; 
 
-    // Lecture sans prompt et avec scanf 
-    scanf(" %[^\n]", str);
+    // Take each character from this string to check 
+    for (i = 0; str[i] != '\0'; i++) { 
 
-    // Traitement caractère par caractère
-    while (str[i] != '\0') {
-        char c = str[i];
+        ch = str[i]; 
 
-        // Vérifie si c'est une lettre (minuscule)
-        if (c >= 'a' && c <= 'z') {
-            // Vérifie si c'est une voyelle
-            if (c == 'a' || c == 'e' || c == 'i' ||
-                c == 'o' || c == 'u' || c == 'y') {
-                voyelles++;
-            } else {
-                consonnes++;
-            }
-        }
-        i++;
-    }
+        // If this character is a vowel, 
+        // increment the count of vowels 
+        if (ch == 'a' || ch == 'e'
+            || ch == 'i' || ch == 'o'
+            || ch == 'u' || ch == 'A'
+            || ch == 'E' || ch == 'I'
+            || ch == 'O' || ch == 'U') 
+            vowels++; 
 
-    // Affichage final sans ligne vide en plus
-    printf("Voyelles : %d\nConsonnes : %d\n", voyelles, consonnes);
+        // If this character is a space 
+        // skip it 
+        else if (ch == ' ') 
+            continue; 
 
-    return 0;
+        else
+            // Else increment the count of consonants 
+            consonants++; 
+    } 
+
+    // Print the total count of vowels and consonants 
+    printf("\nVowels: %d", vowels); 
+    printf("\nConsonants: %d", consonants); 
+} 
+
+// Driver function. 
+int main() 
+{ 
+    char* str = "geeks for geeks"; 
+    printf("String: %s", str); 
+
+    count_vowels_and_consonant(str); 
+
+    return 0; 
 }
