@@ -1,4 +1,3 @@
-// Exo2: count_letters.c
 #include <stdio.h>
 
 int main() {
@@ -6,7 +5,7 @@ int main() {
     int i = 0;
     int voyelles = 0, consonnes = 0;
 
-    // Lecture de la chaîne (sans message d'invite)
+    // Lecture de la chaîne 
     scanf(" %[^\n]", str);
 
     // Parcours de la chaîne
