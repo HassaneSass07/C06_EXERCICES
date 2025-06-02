@@ -5,7 +5,6 @@ int main() {
     int i = 0, j = 0;
 
     // Lecture de la chaîne
-    printf("Entrez une chaîne : ");
     scanf("%[^\n]", str);
 
     // Suppression des espaces

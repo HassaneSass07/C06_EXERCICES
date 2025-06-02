@@ -5,7 +5,6 @@ int main() {
     int i = 0, len = 0;
 
     // Demande à l'utilisateur une chaîne de caractères
-    printf("Entrez une chaîne : ");
     scanf("%[^\n]", str); // Lecture jusqu'au saut de ligne
 
     // Calcul de la longueur de la chaîne

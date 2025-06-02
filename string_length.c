@@ -5,7 +5,6 @@ int main() {
     int len = 0;
 
     // Lecture de la chaîne
-    printf("Entrez une chaîne : ");
     scanf("%[^\n]", str);
 
     // Calcul manuel de la longueur

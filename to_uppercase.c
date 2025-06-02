@@ -4,8 +4,7 @@ int main() {
     char str[100];
     int i = 0;
 
-    // Saisie
-    printf("Entrez une chaîne : ");
+    // Saisie utilisateur
     scanf("%[^\n]", str);
 
     // Conversion des lettres minuscules en majuscules
