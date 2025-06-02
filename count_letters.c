@@ -1,24 +1,22 @@
+// Exo2: count_letters.c
 #include <stdio.h>
 
 int main() {
     char str[100];
     int i = 0;
-    int voyelles = 0, consonnes = 0;
+    int voyelles = 0;
+    int consonnes = 0;
 
-    // Lecture de la chaîne 
+    // Lecture sans prompt et avec scanf 
     scanf(" %[^\n]", str);
 
-    // Parcours de la chaîne
+    // Traitement caractère par caractère
     while (str[i] != '\0') {
         char c = str[i];
 
-        // Convertir en minuscule manuellement
-        if (c >= 'A' && c <= 'Z') {
-            c = c + ('a' - 'A');
-        }
-
-        // Vérifie si c'est une lettre
+        // Vérifie si c'est une lettre (minuscule)
         if (c >= 'a' && c <= 'z') {
+            // Vérifie si c'est une voyelle
             if (c == 'a' || c == 'e' || c == 'i' ||
                 c == 'o' || c == 'u' || c == 'y') {
                 voyelles++;
@@ -29,7 +27,8 @@ int main() {
         i++;
     }
 
-    // Affichage conforme
+    // Affichage final sans ligne vide en plus
     printf("Voyelles : %d\nConsonnes : %d\n", voyelles, consonnes);
+
     return 0;
 }
