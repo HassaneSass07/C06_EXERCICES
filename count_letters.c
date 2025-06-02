@@ -18,7 +18,7 @@ int main() {
 
         // Vérifier si c'est une lettre alphabétique
         if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z')) {
-            
+
             // Convertir en minuscule sans utiliser tolower
             if (c >= 'A' && c <= 'Z') {
                 c = c + 32;
@@ -37,8 +37,7 @@ int main() {
     }
 
     // Afficher le résultat
-    printf("Voyelles : %d\n", voyelles);
-    printf("Consonnes : %d\n", consonnes);
-
+    printf(" : %d, %d\n", voyelles, consonnes);
+    
     return 0;
 }
